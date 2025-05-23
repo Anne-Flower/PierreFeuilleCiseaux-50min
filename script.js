@@ -1,7 +1,5 @@
 const choose = ["paper", "scissor", "rock"];
 let result = [];
-let robot = choose[Math.floor(Math.random() * choose.length)];
-let player = "paper";
 
 
 function hasWin(inputPlayer, inputRobot) {
@@ -14,11 +12,18 @@ function hasWin(inputPlayer, inputRobot) {
   }
   return true;
 }
-return result.push(hasWin(player, robot));
+
+function play() {
+  let robot = choose[Math.floor(Math.random() * choose.length)];
+  let player = "paper";
+  return result.push(hasWin(player, robot));
+
+}
 
 function message() {
   if (result[result.length - 1] === true) {
     return "you win";
   } else "you looose";
 }
-return message;
+
+play()
